@@ -1,0 +1,118 @@
+{
+  "name": "@acutenetwork/fey",
+  "version": "0.1.0",
+  "description": "Beautiful, customizable QR codes for every platform",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./react": {
+      "import": {
+        "types": "./dist/react.d.ts",
+        "default": "./dist/react.js"
+      },
+      "require": {
+        "types": "./dist/react.d.cts",
+        "default": "./dist/react.cjs"
+      }
+    },
+    "./native": {
+      "react-native": {
+        "types": "./src/native.ts",
+        "default": "./src/native.ts"
+      },
+      "import": {
+        "types": "./src/native.ts",
+        "default": "./dist/native.js"
+      },
+      "require": {
+        "types": "./src/native.ts",
+        "default": "./dist/native.cjs"
+      }
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "vite playground",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist coverage",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "qrcode-generator": "^1.4.4"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "react-native": ">=0.70.0",
+    "react-native-svg": ">=13.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    },
+    "react-native-svg": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "@types/jsdom": "^21.1.7",
+    "@types/react": "^19.0.0",
+    "@vitest/coverage-v8": "^3.0.0",
+    "@vitest/eslint-plugin": "^1.0.0",
+    "canvas": "^2.11.2",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "jsdom": "^25.0.1",
+    "prettier": "^3.3.3",
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.8.1",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
+  },
+  "keywords": [
+    "qr",
+    "qrcode",
+    "qr-code",
+    "styling",
+    "react",
+    "react-native",
+    "svg",
+    "canvas"
+  ],
+  "license": "MIT"
+}

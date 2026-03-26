@@ -1,0 +1,13 @@
+export { default as QRCode } from "./lib/core/QRCode";
+export * from "./lib/types";
+export * from "./lib/types/svg-descriptors";
+export { default as dotTypes } from "./lib/constants/dotTypes";
+export { default as cornerDotTypes } from "./lib/constants/cornerDotTypes";
+export { default as cornerSquareTypes } from "./lib/constants/cornerSquareTypes";
+export { default as errorCorrectionLevels } from "./lib/constants/errorCorrectionLevels";
+export { default as errorCorrectionPercents } from "./lib/constants/errorCorrectionPercents";
+export { default as modes } from "./lib/constants/modes";
+export { default as qrTypes } from "./lib/constants/qrTypes";
+export { default as drawTypes } from "./lib/constants/drawTypes";
+export { default as shapeTypes } from "./lib/constants/shapeTypes";
+export { default as gradientTypes } from "./lib/constants/gradientTypes";
