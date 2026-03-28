@@ -1,5 +1,5 @@
 import { Image } from "react-native";
-import { ImageLoader } from "../types/svg-descriptors";
+import { ImageLoader } from "../lib/types/svg-descriptors";
 
 export const rnImageLoader: ImageLoader = (imageSource: string | number) => {
   return new Promise((resolve, reject) => {

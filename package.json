@@ -48,7 +48,7 @@
     "src"
   ],
   "engines": {
-    "node": ">=18.18.0"
+    "node": ">=20.0.0"
   },
   "scripts": {
     "build": "tsup",
@@ -62,7 +62,7 @@
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist coverage",
-    "prepublishOnly": "npm run clean && npm run build"
+    "prepublishOnly": "pnpm clean && pnpm build"
   },
   "dependencies": {
     "qrcode-generator": "^1.4.4"

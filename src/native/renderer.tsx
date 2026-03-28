@@ -11,7 +11,7 @@ import Svg, {
   Image as SvgImage,
   G
 } from "react-native-svg";
-import { SvgElementDescriptor } from "../types/svg-descriptors";
+import { SvgElementDescriptor } from "../lib/types/svg-descriptors";
 
 const TAG_MAP: Record<string, React.ComponentType<Record<string, unknown>>> = {
   rect: Rect as unknown as React.ComponentType<Record<string, unknown>>,
@@ -59,11 +59,7 @@ function mapAttributes(attributes: Record<string, string>): Record<string, strin
 function renderNode(descriptor: SvgElementDescriptor, key: number | string): React.ReactElement {
   const Component = TAG_MAP[descriptor.tag];
   if (!Component) {
-    return (
-      <G key={key}>
-        {descriptor.children.map((child, i) => renderNode(child, i))}
-      </G>
-    );
+    return <G key={key}>{descriptor.children.map((child, i) => renderNode(child, i))}</G>;
   }
 
   const mappedAttrs = mapAttributes(descriptor.attributes);
@@ -81,17 +77,12 @@ function renderNode(descriptor: SvgElementDescriptor, key: number | string): Rea
 
 export function renderToReactNativeSvg(
   descriptor: SvgElementDescriptor,
-  svgRef?: React.RefObject<Svg>
+  svgRef?: React.RefObject<Svg | null>
 ): React.ReactElement {
   const attrs = mapAttributes(descriptor.attributes);
 
   return (
-    <Svg
-      ref={svgRef as React.LegacyRef<Svg>}
-      width={attrs.width}
-      height={attrs.height}
-      viewBox={attrs.viewBox}
-    >
+    <Svg ref={svgRef as React.Ref<Svg>} width={attrs.width} height={attrs.height} viewBox={attrs.viewBox}>
       {descriptor.children.map((child, i) => renderNode(child, i))}
     </Svg>
   );
