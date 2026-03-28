@@ -27,6 +27,16 @@
         "default": "./dist/react.cjs"
       }
     },
+    "./node": {
+      "import": {
+        "types": "./dist/node.d.ts",
+        "default": "./dist/node.js"
+      },
+      "require": {
+        "types": "./dist/node.d.cts",
+        "default": "./dist/node.cjs"
+      }
+    },
     "./native": {
       "react-native": {
         "types": "./src/native.ts",
@@ -106,13 +116,47 @@
   },
   "keywords": [
     "qr",
-    "qrcode",
     "qr-code",
+    "qrcode",
+    "qr-code-generator",
+    "qr-code-styling",
+    "qr-generator",
+    "qr-svg",
+    "styled-qr",
     "styling",
+    "custom-qr",
+    "branded-qr",
+    "branding",
+    "design",
+    "qr-logo",
+    "qr-image",
+    "qr-design",
+    "svg",
+    "canvas",
     "react",
     "react-native",
-    "svg",
-    "canvas"
+    "react-native-svg",
+    "react-qr",
+    "react-qrcode",
+    "nodejs",
+    "node-qr",
+    "server-side",
+    "ssr",
+    "gradient",
+    "rounded",
+    "dots",
+    "typescript",
+    "esm",
+    "tree-shakeable"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "author": "Acute's Engineering Team <engineering@acute.network>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acutenetwork/fey.git"
+  },
+  "bugs": {
+    "url": "https://github.com/acutenetwork/fey/issues"
+  },
+  "homepage": "https://github.com/acutenetwork/fey#readme"
 }
