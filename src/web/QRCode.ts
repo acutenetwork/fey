@@ -1,17 +1,17 @@
-import getMode from "../tools/getMode";
-import mergeDeep from "../tools/merge";
-import downloadURI from "../tools/downloadURI";
-import QRSVG from "./QRSVG";
-import drawTypes from "../constants/drawTypes";
+import getMode from "../lib/tools/getMode";
+import mergeDeep from "../lib/tools/merge";
+import downloadURI from "./downloadURI";
+import QRSVG from "../lib/core/QRSVG";
+import drawTypes from "../lib/constants/drawTypes";
 
-import defaultOptions, { RequiredOptions } from "./QROptions";
-import sanitizeOptions from "../tools/sanitizeOptions";
-import { FileExtension, QRCode as QRCodeInterface, Options, DownloadOptions, ExtensionFunction, Window } from "../types";
-import { ImageLoader } from "../types/svg-descriptors";
+import defaultOptions, { RequiredOptions } from "../lib/core/QROptions";
+import sanitizeOptions from "../lib/tools/sanitizeOptions";
+import { FileExtension, QRCode as QRCodeInterface, Options, DownloadOptions, ExtensionFunction, Window } from "../lib/types";
+import { ImageLoader } from "../lib/types/svg-descriptors";
 import qrcode from "qrcode-generator";
-import getMimeType from "../tools/getMimeType";
-import { renderToDOM } from "../renderers/web/domRenderer";
-import { createWebImageLoader, createNodeImageLoader } from "../renderers/web/webImageLoader";
+import getMimeType from "../lib/tools/getMimeType";
+import { renderToDOM } from "./domRenderer";
+import { createWebImageLoader, createNodeImageLoader } from "./webImageLoader";
 
 declare const window: Window;
 

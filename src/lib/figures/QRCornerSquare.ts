@@ -1,6 +1,6 @@
-import cornerSquareTypes from "../../constants/cornerSquareTypes";
-import { CornerSquareType, DrawArgs, BasicFigureDrawArgs, RotateFigureArgs } from "../../types";
-import { SvgElementDescriptor } from "../../types/svg-descriptors";
+import cornerSquareTypes from "../constants/cornerSquareTypes";
+import { CornerSquareType, DrawArgs, BasicFigureDrawArgs, RotateFigureArgs } from "../types";
+import { SvgElementDescriptor } from "../types/svg-descriptors";
 
 export const availableCornerSquareTypes = Object.values(cornerSquareTypes);
 

@@ -1,4 +1,4 @@
-export { default as QRCode } from "./lib/core/QRCode";
+export { default as QRCode } from "./web/QRCode";
 export * from "./lib/types";
 export * from "./lib/types/svg-descriptors";
 export { default as dotTypes } from "./lib/constants/dotTypes";

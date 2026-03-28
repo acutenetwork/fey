@@ -1,6 +1,6 @@
-import { ImageLoader } from "../../types/svg-descriptors";
-import toDataUrl from "../../tools/toDataUrl";
-import { Window } from "../../types";
+import { ImageLoader } from "../lib/types/svg-descriptors";
+import toDataUrl from "../lib/tools/toDataUrl";
+import { Window } from "../lib/types";
 
 export function createWebImageLoader(window: Window, crossOrigin?: string, saveAsBlob?: boolean): ImageLoader {
   return (uri: string | number) => {

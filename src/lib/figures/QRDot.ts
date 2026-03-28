@@ -1,6 +1,6 @@
-import dotTypes from "../../constants/dotTypes";
-import { DotType, GetNeighbor, DrawArgs, BasicFigureDrawArgs, RotateFigureArgs } from "../../types";
-import { SvgElementDescriptor } from "../../types/svg-descriptors";
+import dotTypes from "../constants/dotTypes";
+import { DotType, GetNeighbor, DrawArgs, BasicFigureDrawArgs, RotateFigureArgs } from "../types";
+import { SvgElementDescriptor } from "../types/svg-descriptors";
 
 export default class QRDot {
   _descriptor?: SvgElementDescriptor;

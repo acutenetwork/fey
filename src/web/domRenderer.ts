@@ -1,4 +1,4 @@
-import { SvgElementDescriptor } from "../../types/svg-descriptors";
+import { SvgElementDescriptor } from "../lib/types/svg-descriptors";
 
 export function renderToDOM(descriptor: SvgElementDescriptor, document: Document): SVGElement {
   const el = document.createElementNS("http://www.w3.org/2000/svg", descriptor.tag);

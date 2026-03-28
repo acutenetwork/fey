@@ -1,8 +1,8 @@
 import calculateImageSize from "../tools/calculateImageSize";
 import errorCorrectionPercents from "../constants/errorCorrectionPercents";
-import QRDot from "../figures/dot/QRDot";
-import QRCornerSquare, { availableCornerSquareTypes } from "../figures/cornerSquare/QRCornerSquare";
-import QRCornerDot, { availableCornerDotTypes } from "../figures/cornerDot/QRCornerDot";
+import QRDot from "../figures/QRDot";
+import QRCornerSquare, { availableCornerSquareTypes } from "../figures/QRCornerSquare";
+import QRCornerDot, { availableCornerDotTypes } from "../figures/QRCornerDot";
 import { RequiredOptions } from "./QROptions";
 import gradientTypes from "../constants/gradientTypes";
 import shapeTypes from "../constants/shapeTypes";
