@@ -12,17 +12,14 @@ config.resolver.unstable_enablePackageExports = true;
 // Make Metro aware of the library source outside this project
 config.watchFolders = [monorepoRoot];
 
-// Ensure node_modules resolve correctly — app's node_modules first
+// Only resolve from the app's node_modules — never the library's
 config.resolver.nodeModulesPaths = [
   path.resolve(projectRoot, "node_modules"),
-  path.resolve(monorepoRoot, "node_modules"),
 ];
 
-// Deduplicate React — force all imports to resolve to the app's copy
-config.resolver.extraNodeModules = {
-  react: path.resolve(projectRoot, "node_modules/react"),
-  "react-native": path.resolve(projectRoot, "node_modules/react-native"),
-  "react-native-svg": path.resolve(projectRoot, "node_modules/react-native-svg"),
-};
+// Block Metro from crawling the library's node_modules entirely
+config.resolver.blockList = [
+  new RegExp(path.resolve(monorepoRoot, "node_modules").replace(/[/\\]/g, "[/\\\\]") + ".*"),
+];
 
 module.exports = config;
