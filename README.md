@@ -446,25 +446,46 @@ import {
 
 ---
 
-## Architecture
+## Contributing
 
+### Setup
+
+```bash
+git clone https://github.com/acutenetwork/fey.git
+cd fey
+pnpm install
 ```
-src/
-  index.ts          Entry: browser/vanilla JS
-  node.ts           Entry: Node.js (zero deps)
-  react.ts          Entry: React component + hook
-  native.ts         Entry: React Native component
-  lib/              Shared, platform-agnostic core
-    core/           QRSVG engine, default options
-    figures/        Dot and corner shape renderers
-    constants/      Type constants and enums
-    tools/          Utilities (merge, sanitize, getMode, etc.)
-    types/          TypeScript type definitions
-  web/              Browser-specific (DOM renderer, image loader)
-  node/             Node-specific (pure SVG serializer)
-  react/            React component + hook
-  native/           React Native component + SVG renderer
+
+### Scripts
+
+| Command | Description |
+|---------|-------------|
+| `pnpm build` | Build all entry points (ESM + CJS + DTS) |
+| `pnpm typecheck` | Run TypeScript type checking |
+| `pnpm lint` | Run ESLint |
+| `pnpm format` | Format with Prettier |
+| `pnpm test` | Run tests |
+| `pnpm dev:vanilla` | Start vanilla JS playground |
+| `pnpm dev:react` | Start React playground |
+| `pnpm dev:node` | Run Node.js playground |
+
+### Playgrounds
+
+Local playgrounds for each platform live in `playgrounds/` (gitignored). To set them up:
+
+```bash
+cd playgrounds/vanilla && pnpm install     # Browser/Vanilla JS
+cd playgrounds/react-app && pnpm install   # React
+cd playgrounds/node-app && pnpm install    # Node.js
+cd playgrounds/react-native-app && npm install  # React Native (Expo)
 ```
+
+### Pull requests
+
+1. Fork the repo and create a branch from `main`
+2. Make your changes and ensure `pnpm build && pnpm typecheck && pnpm lint` all pass
+3. Test your changes in the relevant playground(s)
+4. Submit a PR with a clear description of what changed and why
 
 ## License
 
