@@ -62,7 +62,9 @@
   },
   "scripts": {
     "build": "tsup",
-    "dev": "vite playground",
+    "dev:vanilla": "vite playgrounds/vanilla",
+    "dev:react": "vite playgrounds/react-app",
+    "dev:node": "node playgrounds/node-app/index.js",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",

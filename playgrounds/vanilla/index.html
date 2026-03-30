@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fey - Vanilla Playground</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: system-ui, -apple-system, sans-serif; background: #f5f5f5; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+      h1 { margin-bottom: 8px; color: #1a1a1a; }
+      p { color: #666; margin-bottom: 24px; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1000px; width: 100%; }
+      .card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+      .card h2 { font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+      .qr-container { display: flex; justify-content: center; }
+      .actions { margin-top: 16px; display: flex; gap: 8px; justify-content: center; }
+      button { padding: 8px 16px; border: 1px solid #ddd; border-radius: 6px; background: white; cursor: pointer; font-size: 13px; }
+      button:hover { background: #f0f0f0; }
+      #output { margin-top: 24px; max-width: 1000px; width: 100%; background: white; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+      #output pre { font-size: 12px; overflow-x: auto; max-height: 200px; color: #333; }
+    </style>
+  </head>
+  <body>
+    <h1>@acutenetwork/fey</h1>
+    <p>Vanilla JS / Browser Playground</p>
+    <div class="grid" id="grid"></div>
+    <div id="output"><pre id="log">Click a button to see output here...</pre></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
